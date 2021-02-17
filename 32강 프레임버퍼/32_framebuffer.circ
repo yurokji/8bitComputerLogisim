@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="4.0.4-HC" version="1.0">
+  This file is intended to be loaded by Logisim-evolution (https://github.com/kevinawalsh/logisim-evolution).
+
+  <lib desc="#Wiring" name="0">
+    <tool name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+    </tool>
+    <tool name="Pin">
+      <a name="facing" val="west"/>
+    </tool>
+    <tool name="Tunnel">
+      <a name="facing" val="north"/>
+    </tool>
+    <tool name="Constant">
+      <a name="facing" val="north"/>
+    </tool>
+  </lib>
+  <lib desc="#Base" name="1">
+    <tool name="Text Tool">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="text" val=""/>
+      <a name="valign" val="base"/>
+    </tool>
+  </lib>
+  <lib desc="#Gates" name="2">
+    <tool name="PLA">
+      <a name="table" val=""/>
+    </tool>
+  </lib>
+  <lib desc="#Plexers" name="3">
+    <tool name="Multiplexer">
+      <a name="enable" val="false"/>
+    </tool>
+    <tool name="Demultiplexer">
+      <a name="enable" val="false"/>
+    </tool>
+  </lib>
+  <lib desc="#Arithmetic" name="4"/>
+  <lib desc="#Memory" name="5">
+    <tool name="ROM">
+      <a name="contents">addr/data: 8 8
+0
+</a>
+    </tool>
+  </lib>
+  <lib desc="#I/O" name="6"/>
+  <lib desc="#BFH-Praktika" name="7"/>
+  <lib desc="#Analog" name="8"/>
+  <main name="main"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="1" map="Button2" name="Menu Tool"/>
+    <tool lib="1" map="Button3" name="Menu Tool"/>
+    <tool lib="1" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="1" name="Poke Tool"/>
+    <tool lib="1" name="Edit Tool"/>
+    <tool lib="1" name="Wiring Tool"/>
+    <tool lib="1" name="Text Tool">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="text" val=""/>
+      <a name="valign" val="base"/>
+    </tool>
+    <sep/>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+    </tool>
+    <tool lib="2" name="NOT Gate"/>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+    </tool>
+    <tool lib="2" name="AND Gate"/>
+    <tool lib="2" name="OR Gate"/>
+    <tool lib="2" name="XOR Gate"/>
+    <tool lib="2" name="NAND Gate"/>
+    <tool lib="2" name="NOR Gate"/>
+    <tool lib="0" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+    </tool>
+  </toolbar>
+  <circuit name="main">
+    <a name="appearance" val="classic"/>
+    <a name="clabelfont" val="SansSerif bold 16"/>
+  </circuit>
+  <circuit name="프레임버퍼">
+    <comp lib="0" loc="(280,450)" name="Clock">
+      <a name="facing" val="north"/>
+      <a name="label" val="clk"/>
+    </comp>
+    <comp lib="0" loc="(480,340)" name="Pin">
+      <a name="label" val="wrt"/>
+    </comp>
+    <comp lib="0" loc="(490,300)" name="Pin">
+      <a name="label" val="reset"/>
+    </comp>
+    <comp lib="0" loc="(530,650)" name="Splitter">
+      <a name="bit1" val="0"/>
+      <a name="bit2" val="0"/>
+      <a name="bit3" val="0"/>
+      <a name="bit4" val="0"/>
+      <a name="bit5" val="1"/>
+      <a name="bit6" val="1"/>
+      <a name="bit7" val="1"/>
+      <a name="bit8" val="1"/>
+      <a name="bit9" val="1"/>
+      <a name="facing" val="west"/>
+      <a name="incoming" val="10"/>
+    </comp>
+    <comp lib="5" loc="(180,400)" name="Counter">
+      <a name="label" val="ycnt"/>
+      <a name="max" val="0x1f"/>
+      <a name="trigger" val="falling"/>
+      <a name="width" val="5"/>
+    </comp>
+    <comp lib="5" loc="(300,400)" name="Counter">
+      <a name="label" val="xcnt"/>
+      <a name="max" val="0x1f"/>
+      <a name="width" val="5"/>
+    </comp>
+    <comp lib="5" loc="(570,640)" name="ROM">
+      <a name="addrWidth" val="10"/>
+      <a name="contents">addr/data: 10 24
+compressed
+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&#13;
+0o9q/gFsZ2Ya</a>
+      <a name="dataWidth" val="24"/>
+    </comp>
+    <comp lib="6" loc="(610,530)" name="RGB Video">
+      <a name="height" val="32"/>
+      <a name="scale" val="8"/>
+      <a name="width" val="32"/>
+    </comp>
+    <wire from="(160,420)" to="(160,430)"/>
+    <wire from="(160,430)" to="(310,430)"/>
+    <wire from="(180,400)" to="(220,400)"/>
+    <wire from="(220,400)" to="(220,600)"/>
+    <wire from="(220,600)" to="(220,670)"/>
+    <wire from="(220,600)" to="(660,600)"/>
+    <wire from="(220,670)" to="(510,670)"/>
+    <wire from="(280,420)" to="(280,440)"/>
+    <wire from="(280,440)" to="(280,450)"/>
+    <wire from="(280,440)" to="(570,440)"/>
+    <wire from="(300,400)" to="(320,400)"/>
+    <wire from="(300,410)" to="(310,410)"/>
+    <wire from="(310,410)" to="(310,430)"/>
+    <wire from="(320,400)" to="(320,580)"/>
+    <wire from="(320,580)" to="(320,660)"/>
+    <wire from="(320,580)" to="(650,580)"/>
+    <wire from="(320,660)" to="(510,660)"/>
+    <wire from="(480,340)" to="(540,340)"/>
+    <wire from="(490,300)" to="(550,300)"/>
+    <wire from="(530,650)" to="(570,650)"/>
+    <wire from="(540,340)" to="(540,540)"/>
+    <wire from="(540,540)" to="(630,540)"/>
+    <wire from="(550,300)" to="(550,550)"/>
+    <wire from="(550,550)" to="(610,550)"/>
+    <wire from="(570,440)" to="(570,560)"/>
+    <wire from="(570,560)" to="(620,560)"/>
+    <wire from="(610,530)" to="(610,550)"/>
+    <wire from="(620,530)" to="(620,560)"/>
+    <wire from="(630,530)" to="(630,540)"/>
+    <wire from="(650,530)" to="(650,580)"/>
+    <wire from="(660,530)" to="(660,600)"/>
+    <wire from="(670,530)" to="(670,540)"/>
+    <wire from="(670,540)" to="(840,540)"/>
+    <wire from="(810,700)" to="(840,700)"/>
+    <wire from="(840,540)" to="(840,700)"/>
+  </circuit>
+</project>
