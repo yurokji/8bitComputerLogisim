@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="4.0.4-HC" version="1.0">
+  This file is intended to be loaded by Logisim-evolution (https://github.com/kevinawalsh/logisim-evolution).
+
+  <lib desc="#Wiring" name="0">
+    <tool name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+    </tool>
+    <tool name="Pin">
+      <a name="facing" val="west"/>
+    </tool>
+    <tool name="Tunnel">
+      <a name="facing" val="north"/>
+    </tool>
+    <tool name="Constant">
+      <a name="facing" val="north"/>
+    </tool>
+  </lib>
+  <lib desc="#Base" name="1">
+    <tool name="Text Tool">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="text" val=""/>
+      <a name="valign" val="base"/>
+    </tool>
+  </lib>
+  <lib desc="#Gates" name="2">
+    <tool name="PLA">
+      <a name="table" val=""/>
+    </tool>
+  </lib>
+  <lib desc="#Plexers" name="3">
+    <tool name="Multiplexer">
+      <a name="enable" val="false"/>
+    </tool>
+    <tool name="Demultiplexer">
+      <a name="enable" val="false"/>
+    </tool>
+  </lib>
+  <lib desc="#Arithmetic" name="4"/>
+  <lib desc="#Memory" name="5">
+    <tool name="ROM">
+      <a name="contents">addr/data: 8 8
+0
+</a>
+    </tool>
+  </lib>
+  <lib desc="#I/O" name="6"/>
+  <lib desc="#BFH-Praktika" name="7"/>
+  <lib desc="#Analog" name="8"/>
+  <main name="framebufferAnime64x64"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="1" map="Button2" name="Menu Tool"/>
+    <tool lib="1" map="Button3" name="Menu Tool"/>
+    <tool lib="1" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="1" name="Poke Tool"/>
+    <tool lib="1" name="Edit Tool"/>
+    <tool lib="1" name="Wiring Tool"/>
+    <tool lib="1" name="Text Tool">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="text" val=""/>
+      <a name="valign" val="base"/>
+    </tool>
+    <sep/>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+    </tool>
+    <tool lib="2" name="NOT Gate"/>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+    </tool>
+    <tool lib="2" name="AND Gate"/>
+    <tool lib="2" name="OR Gate"/>
+    <tool lib="2" name="XOR Gate"/>
+    <tool lib="2" name="NAND Gate"/>
+    <tool lib="2" name="NOR Gate"/>
+  </toolbar>
+  <circuit name="framebufferAnime64x64">
+    <a name="clabel" val="22"/>
+    <comp lib="0" loc="(370,430)" name="Clock">
+      <a name="facing" val="north"/>
+      <a name="label" val="clk"/>
+    </comp>
+    <comp lib="0" loc="(540,750)" name="Splitter">
+      <a name="appear" val="right"/>
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+    </comp>
+    <comp lib="0" loc="(570,320)" name="Pin">
+      <a name="label" val="wrt"/>
+    </comp>
+    <comp lib="0" loc="(570,690)" name="Splitter">
+      <a name="appear" val="right"/>
+      <a name="fanout" val="6"/>
+      <a name="incoming" val="6"/>
+    </comp>
+    <comp lib="0" loc="(580,280)" name="Pin">
+      <a name="label" val="reset"/>
+    </comp>
+    <comp lib="0" loc="(590,630)" name="Splitter">
+      <a name="appear" val="right"/>
+      <a name="fanout" val="6"/>
+      <a name="incoming" val="6"/>
+    </comp>
+    <comp lib="0" loc="(630,630)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="20"/>
+      <a name="incoming" val="20"/>
+    </comp>
+    <comp lib="5" loc="(160,380)" name="Counter">
+      <a name="label" val="zcnt"/>
+    </comp>
+    <comp lib="5" loc="(270,380)" name="Counter">
+      <a name="label" val="ycnt"/>
+      <a name="max" val="0x3f"/>
+      <a name="trigger" val="falling"/>
+      <a name="width" val="6"/>
+    </comp>
+    <comp lib="5" loc="(390,380)" name="Counter">
+      <a name="label" val="xcnt"/>
+      <a name="max" val="0x3f"/>
+      <a name="width" val="6"/>
+    </comp>
+    <comp lib="5" loc="(660,620)" name="ROM">
+      <a name="addrWidth" val="20"/>
+      <a name="contents">addr/data: 20 24
+0
+</a>
+      <a name="dataWidth" val="24"/>
+    </comp>
+    <comp lib="6" loc="(700,470)" name="RGB Video">
+      <a name="height" val="64"/>
+      <a name="scale" val="4"/>
+      <a name="width" val="64"/>
+    </comp>
+    <wire from="(140,400)" to="(140,420)"/>
+    <wire from="(140,420)" to="(280,420)"/>
+    <wire from="(160,380)" to="(190,380)"/>
+    <wire from="(190,380)" to="(190,770)"/>
+    <wire from="(190,770)" to="(540,770)"/>
+    <wire from="(250,400)" to="(250,410)"/>
+    <wire from="(250,410)" to="(400,410)"/>
+    <wire from="(270,380)" to="(310,380)"/>
+    <wire from="(270,390)" to="(280,390)"/>
+    <wire from="(280,390)" to="(280,420)"/>
+    <wire from="(310,380)" to="(310,580)"/>
+    <wire from="(310,580)" to="(310,700)"/>
+    <wire from="(310,580)" to="(750,580)"/>
+    <wire from="(310,700)" to="(570,700)"/>
+    <wire from="(370,400)" to="(370,420)"/>
+    <wire from="(370,420)" to="(370,430)"/>
+    <wire from="(370,420)" to="(660,420)"/>
+    <wire from="(390,380)" to="(410,380)"/>
+    <wire from="(390,390)" to="(400,390)"/>
+    <wire from="(400,390)" to="(400,410)"/>
+    <wire from="(410,380)" to="(410,560)"/>
+    <wire from="(410,560)" to="(410,630)"/>
+    <wire from="(410,560)" to="(740,560)"/>
+    <wire from="(410,630)" to="(590,630)"/>
+    <wire from="(540,750)" to="(540,770)"/>
+    <wire from="(560,760)" to="(610,760)"/>
+    <wire from="(560,770)" to="(610,770)"/>
+    <wire from="(560,780)" to="(610,780)"/>
+    <wire from="(560,790)" to="(610,790)"/>
+    <wire from="(560,800)" to="(610,800)"/>
+    <wire from="(560,810)" to="(610,810)"/>
+    <wire from="(560,820)" to="(610,820)"/>
+    <wire from="(560,830)" to="(610,830)"/>
+    <wire from="(570,320)" to="(630,320)"/>
+    <wire from="(570,690)" to="(570,700)"/>
+    <wire from="(580,280)" to="(640,280)"/>
+    <wire from="(590,700)" to="(610,700)"/>
+    <wire from="(590,710)" to="(610,710)"/>
+    <wire from="(590,720)" to="(610,720)"/>
+    <wire from="(590,730)" to="(610,730)"/>
+    <wire from="(590,740)" to="(610,740)"/>
+    <wire from="(590,750)" to="(610,750)"/>
+    <wire from="(630,320)" to="(630,520)"/>
+    <wire from="(630,520)" to="(720,520)"/>
+    <wire from="(630,630)" to="(660,630)"/>
+    <wire from="(640,280)" to="(640,530)"/>
+    <wire from="(640,530)" to="(700,530)"/>
+    <wire from="(660,420)" to="(660,540)"/>
+    <wire from="(660,540)" to="(710,540)"/>
+    <wire from="(700,470)" to="(700,530)"/>
+    <wire from="(710,470)" to="(710,540)"/>
+    <wire from="(720,470)" to="(720,520)"/>
+    <wire from="(740,470)" to="(740,560)"/>
+    <wire from="(750,470)" to="(750,580)"/>
+    <wire from="(760,470)" to="(760,500)"/>
+    <wire from="(760,500)" to="(930,500)"/>
+    <wire from="(900,680)" to="(930,680)"/>
+    <wire from="(930,500)" to="(930,680)"/>
+  </circuit>
+</project>
